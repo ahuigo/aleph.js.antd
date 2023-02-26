@@ -1,0 +1,29 @@
+[package]
+name = "yew-app"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# this is the development version of Yew
+yew = { git = "https://github.com/yewstack/yew.git", features = ["ssr", "hydration"] }
+yew-router = { git = "https://github.com/yewstack/yew.git" }
+wasm-bindgen = { version = "0.2.82", features = ["strict-macro"] }
+wasm-bindgen-futures = "0.4.32"
+wee_alloc = "0.4.5"
+web-sys = "0.3.59"
+url = "2.2.2"
+
+[profile.release]
+# less code to include into binary
+panic = 'abort'
+# optimization over all codebase ( better optimization, slower build )
+codegen-units = 1
+# optimization for size ( more aggressive )
+opt-level = 'z'
+# optimization for size
+# opt-level = 's'
+# link time optimization using using whole-program analysis
+lto = true

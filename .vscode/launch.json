@@ -1,0 +1,62 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  // deno run -A --watch=static/,routes/,islands/
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "request": "launch",
+      "name": "run",
+      "type": "pwa-node",
+      //   "program": "${workspaceFolder}/www/main.ts",
+        "program": "${workspaceFolder}/app/server.ts",
+        // "program": "${workspaceFolder}/a.ts",
+    //   "program": "${workspaceFolder}/examples/feature-apps/unocss/server.ts",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno",
+      "args":["--dev"],
+      "runtimeArgs": [
+        "run",
+        "--inspect",
+        "--inspect-brk",
+        "-A"
+        // "--watch=static/,routes/,islands/"
+      ],
+      "smartStep": false,
+      "attachSimplePort": 9229
+    },
+    {
+      "request": "launch",
+      "name": "debug wasm",
+      "type": "pwa-node",
+      "program": "${workspaceFolder}/b.ts",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno",
+      "args":["--dev"],
+      "runtimeArgs": [
+        "run",
+        "--inspect",
+        "--inspect-brk",
+        "-A"
+      ],
+      "smartStep": false,
+      "attachSimplePort": 9229
+    },
+    {
+      "request": "launch",
+      "name": "test",
+      "type": "pwa-node",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "test",
+        "--allow-all",
+        "--inspect-brk"
+      ],
+      "smartStep": false,
+      "attachSimplePort": 9229
+    }
+  ]
+}

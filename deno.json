@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "dom.extras",
+      "deno.ns"
+    ],
+    "types": [
+      "./types.d.ts"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "https://esm.sh/react@18.2.0"
+  },
+  "importMap": "./import_map.json",
+  "fmt": {
+    "options": {
+      "lineWidth": 120
+    },
+    "files": {
+      "exclude": [
+        ".vscode",
+        "LICENSE",
+        "CODE_OF_CONDUCT.md",
+        "examples/yew-app/pkg",
+        "examples/yew-app/target"
+      ]
+    }
+  },
+  "lint": {
+    "files": {
+      "exclude": [
+        "examples/yew-app/pkg"
+      ]
+    }
+  }
+}
